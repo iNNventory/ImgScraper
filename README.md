@@ -44,12 +44,15 @@ https://drive.google.com/drive/u/0/folders/XXXXXXXXXXXXXX
 https://drive.google.com/drive/u/0/folders/XXXXXXXXXXXXXX
 ``` 
 ## Usage
+#### WebDriver
+Download the corresponding version of the Chrome WebDriver for your browser from [here](https://chromedriver.chromium.org/downloads). To know what Google Chrome version you have installed click on the three dots in the upper right side of the browser and then in `Help -> About Google Chrome`, this will open up a new tab in which you can see what version you are using. Head back to the WebDriver page and click on the link that corresponds your Google Chrome version and download the `.zip` file that is compatible with your SO. Once it is downloaded unzip it and place the content inside `~/webdriver/` (make sure you overwrite or delete the current WebDriver).
+#### Running the application
 To run the application from the terminal, you just have to write the following command, changing the parameters to your will.
 ```command
 python3 main.py photo_count query1 query_2 ... queryN
 ```
 **Important**: instead of using spaces (\" \") in the search terms use an underscore (\"_\"), the program will automatically remove it for the search.
-#### **Example**
+##### **Example**
 ```command
 python3 main.py 3 allen_key screwdriver hammer
 ```
