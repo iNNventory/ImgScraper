@@ -118,7 +118,7 @@ if __name__ == '__main__':
 		print(f"The number of images to save and the search terms must be introduced\n")
 		print(f"Use: python3 main.py photo_count query1 query_2 ... queryN")
 		print(f"Example: python3 main.py 3 allen_key screwdriver hammer\n")
-		print(f"Warning: instead of using spaces (\" \") in the search terms use an underscore (\"_\")")
+		print(f"Important: instead of using spaces (\" \") in the search terms use an underscore (\"_\")")
 
 	else:
 		photo_count = sys.argv[1]
