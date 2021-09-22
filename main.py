@@ -5,6 +5,7 @@ import os
 from PIL import Image
 import io
 import sys
+from dotenv import load_dotenv
 
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
@@ -89,13 +90,15 @@ def persist_image(folder_path:str, file_name:str, url:str, photo_count:int, driv
 
 			full_file_name = file_name + str(photo_count) + '.jpg'
 			
+			load_dotenv()
+
 			f = drive.CreateFile({
 				'title': full_file_name ,
 				'mimeType':'image/jpeg',
 				'parents': [{
 					'kind': 'drive#fileLink',
-					'teamDriveId': "0AGo653SuFRzdUk9PVA",
-					'id': '1EUiOhSl9lI0SAXrFEv52Ek6YNV2b1LuI'
+					'teamDriveId': os.getenv('GDRIVE_TEAMDRIVE_ID'),
+					'id': os.getenv('GDRIVE_FOLDER_ID')
 				}]
 			})
 			f.SetContentFile(file_path)
@@ -103,6 +106,7 @@ def persist_image(folder_path:str, file_name:str, url:str, photo_count:int, driv
 
 			os.remove(file_path)
 			os.rmdir(folder_path)
+			os.rmdir("photos")
 
 		#print(f"SUCCESS - saved {url} - as {file_path}")
 	except Exception as e:
