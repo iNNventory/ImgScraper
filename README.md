@@ -45,12 +45,12 @@ https://drive.google.com/drive/u/0/folders/XXXXXXXXXXXXXX
 ``` 
 ## Usage
 To run the application from the terminal, you just have to write the following command, changing the parameters to your will.
-```console
+```command
 python3 main.py photo_count query1 query_2 ... queryN
 ```
 **Important**: instead of using spaces (\" \") in the search terms use an underscore (\"_\"), the program will automatically remove it for the search.
 #### **Example**
-```console
+```command
 python3 main.py 3 allen_key screwdriver hammer
 ```
 ## Warning
